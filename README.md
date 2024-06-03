@@ -1,6 +1,6 @@
-# git_on_cyverse
+# Using Git and Github with Cyverse Vice Apps
 
-## Using Git and Github with Cyverse Vice Apps
+Git and Github are essential tools for software version control 
 
 Every time a CyVerse Jupyter App is launched, users need to create git credentials and an ssh key for a GitHub handshake.
 

@@ -1,6 +1,6 @@
 # Using Git and Github with Cyverse Vice Apps
 
-Git and Github are essential tools for software version control 
+Git and Github are essential tools for software version control. The following documentation show how to use Git and Github with the Cyverse Discovery Environment and specifically with Visual Interactive Computing Environement (VICE) apps (e.g, Jupyter Lab). 
 
 Every time a CyVerse Jupyter App is launched, users need to create git credentials and an ssh key for a GitHub handshake.
 

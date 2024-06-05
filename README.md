@@ -26,7 +26,7 @@ We can work around this issue by creating `.config` and `.ssh` files one time in
 
 You can now work on your cloned GitHub repositories and push changes.
 
-### Reproducing the handshake
+### Step 2: Reproducing the handshake
 
 Likely, once done with work on the launched App, you will terminate it and therefore lose the `ssh` and `git` credentials.
 Since we have copied the necessary files to our own private Data Store folders, we can reproduce this handshake by just copying these files to any newely launched App.
@@ -35,3 +35,6 @@ Since we have copied the necessary files to our own private Data Store folders, 
 2. Copy the `git` credentials with `cp ~/data-store/home/<username>/.gitconfig ~/`
 
 You should now be able to work on your cloned GitHub repositories and push changes without having to recreate the `ssh` key or your `git` credentials.
+
+### Pro Tip
+Remember that as you are working in a git repository in a Cyverse container, the container is ephemeral and will disappear when the App is shutdown. You will also lose any changes you made in the repository. PLEASE  REMEMBER TO PUSH CHANGES TO GITHUB OFTEN! Cyverse containers will self-destruct after 4 hours. 

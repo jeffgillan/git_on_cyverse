@@ -2,11 +2,17 @@
 
 Git and Github are essential tools for software version control. The following documentation show how to use Git and Github with the Cyverse Discovery Environment and specifically with Visual Interactive Computing Environement (VICE) apps (e.g, Jupyter Lab). 
 
-Every time a CyVerse Jupyter App is launched, users need to create git credentials and an ssh key for a GitHub handshake.
+## The Problem
 
-Here are steps to work around this issue.
+Your personal datastore directory (ie, `~/data-store/home/<cyverse user name>`) would seem like the most logical place to clone git repositories, work in them, then push changes back up to Github. Unforntunately, git repositories are not compatable with Integrated Rule Oriented Data System (IRODS) which is the underlying technology of the Cyverese Datastore. So to use git and github with Cyverse, we need a different solution. 
 
-### The first handshake
+## The Solution
+
+Instead of doing git commands from your personal datastore, we can do git from the home directories of JupyterLab or Cloudshell containers. When you first launch a JupyterLab terminal, you will probably be in the directory `~/` or `~/data-store`. From these directories, git commands work perfectly fine. To do git commands with Github, we need to have `.gitconfig` and `.ssh` files stored in our container. A problem with this is that Cyverse containers are ephemeral and disappear when the App is shutdown. That means every time a CyVerse Jupyter App is launched, users need to create git credentials and an ssh key for a GitHub handshake. Quite annoying! 
+
+We can work around this issue by creating `.config` and `.ssh` files one time in the container and then store them in your personal Datastore directory. Each time you start a new JupyterLab container we need to copy the `.config` and `.ssh` files from your personal Datastore directory back to the container. 
+
+### Step 1: Set up the authentication handshake with Github
 
 - Launch a VICE App with Jupyter (e.g., [JupyterLab Data Science](https://de.cyverse.org/apps/de/c2227314-1995-11ed-986c-008cfa5ae621))
 - Once the App is running, open the App's terminal.
